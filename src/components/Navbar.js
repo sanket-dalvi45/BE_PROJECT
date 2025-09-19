@@ -1,68 +1,28 @@
-import React from "react";
+import React from 'react';
+import Button from './Button';
 
-export default function Navbar() {
+const Navbar = ({ onShowForm }) => {
   return (
-    <nav className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 shadow-lg">
-      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
-          
-          {/* Brand + Links */}
-          <div className="flex items-center space-x-10">
-            {/* Brand */}
-            <a
-              href="/"
-              className="text-2xl font-extrabold text-white tracking-wide hover:text-yellow-300 transition"
-            >
-              Navbar
-            </a>
-
-            {/* Links */}
-            <div className="hidden md:flex space-x-8">
-              <a href="/" className="text-white font-medium hover:text-yellow-300 transition">
-                Home
-              </a>
-              <a href="/" className="text-white font-medium hover:text-yellow-300 transition">
-                Services
-              </a>
-              <a href="/" className="text-white font-medium hover:text-yellow-300 transition">
-                Explore
-              </a>
-              <a href="/" className="text-white font-medium hover:text-yellow-300 transition">
-                About Us
-              </a>
-            </div>
-          </div>
-
-          {/* Buttons + Search */}
-          <div className="flex items-center space-x-4">
-            {/* Search */}
-            <form className="flex items-center">
-              <input
-                type="search"
-                placeholder="Search"
-                className="px-3 py-2 bg-white/90 border border-white rounded-l-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-800"
-              />
-              <button
-                type="submit"
-                className="px-4 py-2 bg-yellow-400 text-gray-900 font-semibold rounded-r-lg hover:bg-yellow-500 transition"
-              >
-                🔍
-              </button>
-            </form>
-
-            {/* Buttons */}
-            <button className="px-4 py-2 bg-yellow-400 text-gray-900 font-semibold rounded-lg hover:bg-yellow-500 transition">
-              Sign Up
-            </button>
-            <button className="px-4 py-2 bg-white text-indigo-600 font-semibold rounded-lg border border-indigo-500 hover:bg-indigo-50 transition">
-              Sign In
-            </button>
-            <button className="px-4 py-2 bg-white text-indigo-600 font-semibold rounded-lg border border-indigo-500 hover:bg-indigo-50 transition">
-              Sign In
-            </button>
-          </div>
-        </div>
+    <nav className="flex items-center justify-between p-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg select-none">
+      <div>
+        <h1 className="text-2xl font-bold">PersonaLift</h1>
+      </div>
+      <div>
+        <ul className="hidden md:flex space-x-8">
+          <li><a href="#home" className="font-medium hover:text-slate-800 cursor-pointer">Home</a></li>
+          <li><a href="#learn" className="font-medium hover:text-slate-800 cursor-pointer">Learn</a></li>
+          <li><a href="#practice" className="font-medium hover:text-slate-800 cursor-pointer">Practice</a></li>
+          <li><a href="#compete" className="font-medium hover:text-slate-800 cursor-pointer">Compete</a></li>
+          <li><a href="#analyse" className="font-medium hover:text-slate-800 cursor-pointer">Analyse</a></li>
+          <li><a href="#discuss" className="font-medium hover:text-slate-800 cursor-pointer">Discuss</a></li>
+        </ul>
+      </div>
+      <div className="flex items-center space-x-2">
+        <Button text="Login" onClick={() => onShowForm('login')} />
+        <Button text="Sign Up" onClick={() => onShowForm('signup')} />
       </div>
     </nav>
   );
-}
+};
+
+export default Navbar;
