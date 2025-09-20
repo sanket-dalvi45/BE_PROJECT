@@ -23,6 +23,7 @@ function App() {
       <HeroSection onShowForm={handleShowForm} />
       <FeaturesSection></FeaturesSection>
       <Footer></Footer>
+      
 
       {/* Conditionally render forms based on state */}
       {showForm === 'login' && <LoginForm onClose={handleCloseForm} />}
